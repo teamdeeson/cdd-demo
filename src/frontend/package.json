@@ -1,0 +1,22 @@
+{
+  "name": "project-frontend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "SETTINGS_ENVIRONMENT='frontend' ./node_modules/.bin/frontend-serve",
+    "statics": "SETTINGS_ENVIRONMENT='frontend' ./node_modules/.bin/deeson-static-build static-site /iwm-main",
+    "preview": "yarn statics",
+    "build": "./node_modules/deeson-webpack-config-starter/node_modules/.bin/webpack -p"
+  },
+  "dependencies": {
+    "deeson-webpack-config-starter": "https://github.com/teamdeeson/deeson-webpack-config",
+    "native-promise-only": "^0.8.1",
+    "objectFitPolyfill": "^2.0.5",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-responsive-type": "^0.5.1",
+    "script-loader": "^0.7.0",
+    "stickyfill": "^1.1.1",
+    "webpack-modernizr-loader": "^3.0.1"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/assets/app.css">
+  <script type="text/javascript" src="{{ base_path ~ directory }}/assets/app.js"></script>
+  <style type="text/css">
+  </style>
+</head>
+<body>
+  {% include '@components/header/header.html.twig' with {content: {
+       title: 'This War Artist Drew <em>Stunning Portraits</em> Of RAF Pilots'
+  }} %}
+</body>
+</html>

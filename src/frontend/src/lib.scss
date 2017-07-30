@@ -1,0 +1,114 @@
+$iwm-xs: 500px;
+$iwm-md: 768px;
+$iwm-lg: 1920px;
+
+$bg-grey: #e5e7e6;
+$white: #ffffff;
+$iwm-red: #d1153c;
+$text-black: #333333;
+$blue-grey: #455560;
+$warm-grey: #8b8b8b;
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value, $m: 1) {
+  @each $property in $properties {
+    #{$property}: calc(#{$min-value} * #{$m});
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc((#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}) * #{$m});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$max-value} * #{$m});
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fs($min, $max, $xs: 500px, $mx: 1920px) {
+  @include fluid-type('max-width', $xs, $mx, $min, $max);
+}
+
+@mixin fsc($min, $max, $c, $xs: 500px, $mx: 1920px) {
+  @include fluid-type('flex-basis' 'max-width', $xs, $mx, $min, $max, $c);
+}
+
+@mixin width($num) {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 10% * $num;
+  flex-basis: 10% * $num;
+  max-width: 10% * $num;
+}
+
+@mixin taggedText() {
+  font-family: Interface, sans-serif;
+  font-weight: bold;
+  color: $blue-grey;
+  text-transform: uppercase;
+  font-size: responsive 14px 18px;
+  font-range: $iwm-xs $iwm-lg;
+}
+
+@mixin container() {
+  @include fluid-type('max-width', 320px, 1920px, 290px, 1760px);
+  margin: 0 auto;
+}
+
+@mixin h4() {
+  font-family: Interface, sans-serif;
+  font-weight: bold;
+  color: $text-black;
+  text-transform: uppercase;
+  font-size: responsive 26px 50px;
+  font-range: $iwm-xs $iwm-lg;
+  line-height: 0.9;
+}
+
+@mixin h5() {
+  font-family: Interface, sans-serif;
+  font-weight: bold;
+  color: $text-black;
+  font-size: responsive 24px 36px;
+  font-range: $iwm-xs $iwm-lg;
+  line-height: 1;
+}
+
+@mixin h6() {
+  font-family: Interface, sans-serif;
+  font-weight: bold;
+  color: $text-black;
+  font-size: responsive 22px 28px;
+  font-range: $iwm-xs $iwm-lg;
+  line-height: 1;
+}
+
+@mixin tagHl() {
+  font-family: Interface, sans-serif;
+  font-weight: bold;
+  color: $blue-grey;
+  text-transform: uppercase;
+  font-size: responsive 14px 18px;
+  font-range: $iwm-xs $iwm-lg;
+}
+
+@mixin largeBodyText() {
+  font-size: responsive 18px 24px;
+  font-range: $iwm-xs $iwm-lg;
+  line-height: 1.4;
+}
+
+@mixin h1() {
+  font-family: Interface, sans-serif;
+  color: $iwm-red;
+  text-transform: uppercase;
+  font-size: responsive 38px 140px;
+  font-range: $iwm-xs $iwm-lg;
+  line-height: 0.9;
+}
