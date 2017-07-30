@@ -46,7 +46,7 @@ $settings['install_profile'] = 'deeson';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-// $settings['hash_salt'] = 'ENTER_A_VALUE_HERE';
+$settings['hash_salt'] = file_get_contents('../src/secrets/salt.txt');
 
 /**
  * Deployment identifier.

@@ -10,9 +10,9 @@
  */
 $base_domains = [
   'localhost' => 'local',
-  'dev-site.com' => 'dev',
-  'test-site.com' => 'test',
-  'live-site.com' => 'live',
+  'dev-aldes.pantheonsite.io' => 'dev',
+  'test-aldes.pantheonsite.io' => 'test',
+  'www.aldes.org.uk' => 'live',
 ];
 
 // Pantheon environment settings.
