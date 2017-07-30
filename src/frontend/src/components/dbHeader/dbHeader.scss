@@ -1,0 +1,206 @@
+@import '~./../../lib.scss';
+
+.header {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $blue;
+  color: #3b3b3b;
+  background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
+  line-height: 1.5;
+  font-size: 1em;
+  margin: 0 0 1em;
+  clear: right;
+
+  &__inner {
+    position: relative;
+    max-width: 1290px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  &__link {
+    color: $white;
+    border-bottom: none;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 1.821em;
+    line-height: 1;
+    padding: 1.286em 0 0;
+    margin-bottom: 1.857em;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__primary_menu {
+    clear: both;
+    display: block;
+
+    ul {
+      margin: 0;
+      padding: 0 15px;
+      text-align: left;
+      list-style: none outside;
+      display: block;
+      line-height:1.5;
+    }
+
+    ul:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    li {
+      float: left;
+      list-style: none;
+      padding: 0 1px;
+      margin: 0 1px;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      display: list-item;
+      text-align: -webkit-match-parent;
+
+      a {
+        background: rgba(255, 255, 255, 0.7);
+        border-bottom: none;
+        float: left;
+        padding: 0.7em 0.8em;
+        text-decoration: none;
+        text-shadow: 0 1px #eee;
+        border-radius: 8px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-top: 4px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        color: $black;
+      }
+
+      a.is-active {
+        color: $black;
+        background: $white;
+      }
+    }
+
+    @media screen and (max-width: $width-md) {
+
+      ul {
+        margin: 0 5px;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        float: left;
+        margin-right: 5px;
+        padding: 0;
+        display: inline-block;
+        width: 32%;
+        height: auto;
+        overflow: visible;
+
+        a {
+          float: none;
+          display: block;
+          border-radius: 8px;
+          margin-bottom: 5px;
+          padding: 0.9em 5px;
+        }
+      }
+    }
+
+    @media screen and (max-width: $width-xs) {
+
+      &__menu-toggle-target {
+        display: inherit;
+        position: fixed;
+        top: 0;
+      }
+
+      &__menu_toggle {
+        color: #333;
+        background: #ccc;
+        background: rgba(255, 255, 255, 0.7);
+        float: none;
+        font-size: 0.929em;
+        display: block;
+        text-decoration: none;
+        text-shadow: 0 1px #eee;
+        padding: 0.9em 10px 0.9em 10px;
+        z-index: 1000;
+      }
+
+      &__menu_toggle:after {
+        content: "";
+        background: url(hamburger.svg) no-repeat;
+        background-size: contain;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+      }
+
+      &__menu_toggle_target_show:target ~ &__menu_toggle,
+      &__menu_toggle_target_hide {
+        display: none;
+      }
+
+      &__menu_toggle_target_show:target ~ &__menu_toggle_target_hide {
+        display: block;
+      }
+
+      ul {
+        height: 0;
+        overflow: hidden;
+      }
+
+      li {
+        width: 100%;
+      }
+
+      &__menu_toggle_target_show:target ~ div ul {
+        height: auto;
+        overflow: visible;
+      }
+    }
+
+    @media screen and (min-width: $width-xs + 1) {
+      &__menu_toggle {
+        display: none;
+      }
+    }
+
+  }
+
+  &__secondary_menu {
+    ul {
+      text-align: right;
+      margin: 0 10px;
+      padding: 0;
+      list-style: none outside;
+      display: block;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      display: inline;
+
+      a {
+        display: inline-block;
+        padding: 0.8em;
+        border-bottom: none;
+        text-decoration: none;
+        color: $white;
+      }
+
+      a.is-active {
+        color: $white;
+      }
+    }
+  }
+}

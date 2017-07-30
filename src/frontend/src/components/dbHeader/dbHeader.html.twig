@@ -1,0 +1,35 @@
+{#
+variables:
+- lightHeadText: boolean, use the light heading colour
+
+examples:
+
+   {% include '@components/header/header.html.twig' with {
+    content: {
+      lightHeadText: true
+    }
+  }%}
+#}
+<header class="header" id="header" role="banner" aria-label="Site Header">
+  <div class="header__inner">
+    <div class="header__secondary_menu">
+      {{ content.secondary_menu }}
+    </div>
+
+    <div>
+      <img src="https://talks.matthewtift.com/osn/images/drupal-8-logo.png" width="56" height="66" />
+      <a class="header__link" href="/">Bartik Theme Site</a>
+    </div>
+
+    <div class="header__primary_menu">
+
+      <div class="header__primary_menu__menu-toggle-target header__primary_menu__menu_toggle_target_show" id="header__primary_menu__menu_toggle_target_show"></div>
+      <div class="header__primary_menu__menu-toggle-target" id="header__primary_menu__menu_toggle_target_hide"></div>
+      <a class="menu-toggle header__primary_menu__menu_toggle" href="#header__primary_menu__menu_toggle_target_show">Show — Main navigation</a>
+      <a class="menu-toggle header__primary_menu__menu_toggle header__primary_menu__menu_toggle_target_hide" href="#header__primary_menu__menu_toggle_target_hide">Hide — Main navigation</a>
+
+      {{ content.primary_menu }}
+
+    </div>
+  </div>
+</header>

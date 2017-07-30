@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Functions to support the Deeson Bartik theme.
+ */
+
+function deeson_bartik_preprocess_page(&$variables) {
+
+}

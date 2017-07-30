@@ -8,8 +8,16 @@
   </style>
 </head>
 <body>
-  {% include '@components/header/header.html.twig' with {content: {
-       title: 'This War Artist Drew <em>Stunning Portraits</em> Of RAF Pilots'
+  {% include '@components/dbHeader/dbHeader.html.twig' with {content: {
+    primary_menu: "<div><nav><ul>
+                     <li><a href=\"/\" class=\"is-active\">Home</a></li>
+                     <li><a href=\"/\">About</a></li>
+                     <li><a href=\"/\">Contact</a></li>
+                   </ul></nav></div>",
+    secondary_menu: "<div><nav><ul>
+                       <li><a href=\"/user/login\" class=\"is-active\">Log in</a></li>
+                       <li><a href=\"/user/login\">Membership</a></li>
+                     </ul></nav></div>",
   }} %}
 </body>
 </html>

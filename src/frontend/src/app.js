@@ -7,5 +7,5 @@ import './type.scss';
 
 import './drupalisms.scss';
 
-import './components/header';
+import './components/dbHeader';
 
