@@ -1,0 +1,20 @@
+<article typeof="schema:Article" class="article_teaser">
+    <header class="article_teaser__header">
+        <h2><a href="{{ content.url }}">{{ content.title }}</a></h2>
+        <span>Submitted by <a rel="schema:author" typeof="schema:Person" property="schema:name" href="#">Joe Blogs</a></span>
+    </header>
+    <div class="article_teaser__content">
+        <a href="{{ content.url }}">
+          {{ content.img }}
+        </a>
+        <div property="schema:text">
+            {{ content.text }}
+        </div>
+    </div>
+    <div class="article_teaser__footer">
+        <ul>
+            <li><a href="{{ content.ur }}" rel="tag" title="Example content" hreflang="en">Read more</a></li>
+            <li><a href="{{ content.comment_url }}" title="Share your thoughts and opinions.">Add new comment</a></li>
+        </ul>
+    </div>
+</article>

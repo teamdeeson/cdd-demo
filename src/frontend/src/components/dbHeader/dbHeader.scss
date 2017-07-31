@@ -19,6 +19,10 @@
     display: block;
   }
 
+  &__logo {
+    background: url(logo.svg) no-repeat;
+  }
+
   &__link {
     color: $white;
     border-bottom: none;
@@ -30,6 +34,8 @@
     margin-bottom: 1.857em;
     display: inline-block;
     vertical-align: top;
+    padding-left: 65px;
+    margin-top: -26px;
   }
 
   &__primary_menu {
@@ -172,7 +178,7 @@
       &__menu_toggle {
         display: none;
       }
-    }
+    }   
 
   }
 

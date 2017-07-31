@@ -1,0 +1,31 @@
+@import '~./../../lib.scss';
+
+.layout_two_column {
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  &__right {
+    display: block;
+  }
+
+  &__left {
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+
+  @media screen and (min-width: $width-md) {
+    &__right {
+      margin-left: 25%;
+      margin-right: 0;
+      width: 75%;
+      float: left;
+      position: relative;
+    }
+
+    &__left {
+      width: 25%;
+      margin-left: -100%;
+    }
+  }
+}

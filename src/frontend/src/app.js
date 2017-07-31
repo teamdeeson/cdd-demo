@@ -8,4 +8,6 @@ import './type.scss';
 import './drupalisms.scss';
 
 import './components/dbHeader';
+import './components/dbArticleTeaser';
+import './components/dbLayoutTwoColumn';
 

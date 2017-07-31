@@ -1,14 +1,22 @@
 {#
 variables:
-- lightHeadText: boolean, use the light heading colour
+- primary_menu: string - HTML describing the main menu. Should be wrapped in a div and contain an unordered list.
+- secondary_menu: string - HTML describing the secondary menu. Should be wrapped in a div and contain an unordered list.
 
 examples:
 
-   {% include '@components/header/header.html.twig' with {
-    content: {
-      lightHeadText: true
-    }
-  }%}
+  {% include '@components/dbHeader/dbHeader.html.twig' with {content: {
+    primary_menu: "<div><nav><ul>
+                     <li><a href=\"/\" class=\"is-active\">Home</a></li>
+                     <li><a href=\"/\">About</a></li>
+                     <li><a href=\"/\">Contact</a></li>
+                   </ul></nav></div>",
+    secondary_menu: "<div><nav><ul>
+                       <li><a href=\"/user/login\" class=\"is-active\">Log in</a></li>
+                       <li><a href=\"/user/login\">Membership</a></li>
+                     </ul></nav></div>",
+  }} %}
+
 #}
 <header class="header" id="header" role="banner" aria-label="Site Header">
   <div class="header__inner">
@@ -16,9 +24,8 @@ examples:
       {{ content.secondary_menu }}
     </div>
 
-    <div>
-      <img src="https://talks.matthewtift.com/osn/images/drupal-8-logo.png" width="56" height="66" />
-      <a class="header__link" href="/">Bartik Theme Site</a>
+    <div class="header__logo">
+      <a class="header__link" href="/">{{ "Component Driven Development"|t }}</a>
     </div>
 
     <div class="header__primary_menu">
@@ -32,4 +39,10 @@ examples:
 
     </div>
   </div>
+</header>
+
+<header>
+  <div class="header__logo">{{  content.logo }}</div>
+  <div class="header__middlebit">{{  content.middlebit }}</div>
+
 </header>

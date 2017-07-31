@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/assets/app.css">
+  <script type="text/javascript" src="{{ base_path ~ directory }}/assets/app.js"></script>
+  <style type="text/css">
+  </style>
+</head>
+<body>
+  {% include '@components/dbHeader/dbHeader.html.twig' with {content: {
+    primary_menu: "<div><nav><ul>
+                     <li><a href=\"/\" class=\"is-active\">Home</a></li>
+                     <li><a href=\"/\">About</a></li>
+                     <li><a href=\"/\">Contact</a></li>
+                   </ul></nav></div>",
+    secondary_menu: "<div><nav><ul>
+                       <li><a href=\"/user/login\" class=\"is-active\">Log in</a></li>
+                       <li><a href=\"/user/login\">Membership</a></li>
+                     </ul></nav></div>",
+  }} %}
+
+  {% set article %}
+      {% include '@components/dbArticleTeaser/dbArticleTeaser.html.twig' with {content: {
+            title: "Example Content",
+            img: '<img src="https://dummyimage.com/220x183/000/fff.png">',
+            text: '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>'
+      }} %}
+  {% endset %}
+
+  {% include '@components/dbLayoutTwoColumn/dbLayoutTwoColumn.html.twig' with {content: {
+    right: article
+  }} %}
+</body>
+</html>

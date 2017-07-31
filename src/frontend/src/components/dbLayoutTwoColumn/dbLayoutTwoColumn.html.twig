@@ -1,0 +1,22 @@
+{#
+variables:
+- right: string - HTML for the right column (main content region).
+- secondary_menu: string - HTML for the left column (sidebar content).
+
+examples:
+
+      {% include '@components/dbArticleTeaser/dbArticleTeaser.html.twig' with {content: {
+            title: "Example Content",
+            img: '<img src="https://dummyimage.com/220x183/000/fff.png">',
+            text: '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>'
+      }} %}
+
+#}
+<div class="layout_two_column">
+    <main class="layout_two_column__right">
+        {{ content.right }}
+    </main>
+    <div class="layout_two_column__left">
+        {{ content.left }}
+    </div>
+</div>
