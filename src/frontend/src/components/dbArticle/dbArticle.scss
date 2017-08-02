@@ -1,0 +1,67 @@
+@import '~./../../lib.scss';
+
+.article {
+  display: block;
+  padding: 10px;
+
+  &__header {
+    display: block;
+    padding: 10px;
+
+    h1 {
+      font-size: 2em;
+      line-height: 1em;
+      font-weight: inherit;
+      color: $black;
+    }
+
+    a {
+      color: #181818;
+      text-decoration: none;
+      line-height: 1.4;
+      border-bottom: none;
+      background-color: transparent;
+    }
+
+    &__author {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.857em;
+      color: #68696b;
+    }
+  }
+
+  &__content {
+    clear: none;
+    font-size: 1em;
+    line-height: 1.6;
+
+    img {
+      float: left;
+      max-width: 100%;
+      height: auto;
+      border: 0;
+      padding: 10px;
+      margin-right: 10px;
+
+      @media screen and (max-width: $width-xs) {
+        float: none;
+        width: 100%;
+        margin-right: 0px;
+      }
+    }
+
+
+
+    &__text {
+      padding: 10px;
+      font-size: 1.071em;
+      line-height: 1.5;
+
+      p {
+        margin: 0 0 1.2em;
+      }
+    }
+
+  }
+
+}

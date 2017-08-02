@@ -1,0 +1,10 @@
+<div class="article_list">
+    {% if content.inner %}
+        {{ content.inner }}
+    {% elseif content.empty %}
+        {{ content.empty }}
+    {% endif %}
+    <div class="article_list__footer">
+        {{ content.footer }}
+    </div>
+</div>

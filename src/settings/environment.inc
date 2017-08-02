@@ -15,6 +15,9 @@ $base_domains = [
   'www.aldes.org.uk' => 'live',
 ];
 
+$instance = $_SERVER['HTTP_HOST'];
+define('SETTINGS_INSTANCE', $instance);
+
 // Pantheon environment settings.
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   define('SETTINGS_HOSTING', 'pantheon');
@@ -64,16 +67,7 @@ elseif (isset($_ENV['PLATFORM_APPLICATION'])) {
       break;
   }
 }
-else {
-  // Environment settings for VDD.
-  $local_settings = '/var/www/settings/PROJECT/settings.inc';
-  if (file_exists($local_settings)) {
-    require_once $local_settings;
-    define('SETTINGS_ENVIRONMENT', 'local');
-    define('SETTINGS_HOSTING', 'vdd');
-  }
-  elseif (getenv('DOCKER_LOCAL')) {
+elseif (getenv('DOCKER_LOCAL')) {
     define('SETTINGS_ENVIRONMENT', 'local');
     define('SETTINGS_HOSTING', 'docker');
-  }
 }

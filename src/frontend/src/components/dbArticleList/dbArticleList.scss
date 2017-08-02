@@ -1,0 +1,19 @@
+@import '~./../../lib.scss';
+
+.article_list {
+
+  &__footer {
+    padding: 10px;
+
+    a {
+      display: inline-block;
+      background: url(feed.svg) no-repeat;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 16px;
+      height: 16px;
+    }
+
+  }
+
+}

@@ -21,15 +21,40 @@
   }} %}
 
   {% set article %}
-      {% include '@components/dbArticleTeaser/dbArticleTeaser.html.twig' with {content: {
+        {% include '@components/dbArticleTeaser/dbArticleTeaser.html.twig' with {content: {
             title: "Example Content",
             img: '<img src="https://dummyimage.com/220x183/000/fff.png">',
-            text: '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>'
-      }} %}
+            text: '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>',
+            links: '<ul><li><a href="#" rel="tag" title="Example content" hreflang="en">Read more</a></li><li><a href="#" title="Share your thoughts and opinions.">Add new comment</a></li></ul>'
+        }} %}
+  {% endset %}
+
+  {% set articleListInner %}
+    {% include '@components/dbArticleList/dbArticleListInner.html.twig' with {content: {
+        rows: [article, article, article],
+    }} %}
+  {% endset %}
+
+  {% set articleList %}
+    {% include '@components/dbArticleList/dbArticleListOuter.html.twig' with {content: {
+        inner: articleListInner,
+        empty: '',
+        footer: '<a href="/rss.xml" class="feed-icon">Subscribe to</a>',
+    }} %}
   {% endset %}
 
   {% include '@components/dbLayoutTwoColumn/dbLayoutTwoColumn.html.twig' with {content: {
-    right: article
+    right: articleList
+  }} %}
+
+  {% set poweredByDeeson %}
+    {% include '@components/dbPoweredByDeeson/dbPoweredByDeeson.html.twig' with {content: {
+      content: '<span>Powered by <a hre="">Deeson</a></span>',
+    }} %}
+  {% endset %}
+
+  {% include '@components/dbFooter/dbFooter.html.twig' with {content: {
+    footer: '<ul><li><a href="#">Contact</a></li><li><a href="#">Careers</a></li></ul>' ~ poweredByDeeson,
   }} %}
 </body>
 </html>

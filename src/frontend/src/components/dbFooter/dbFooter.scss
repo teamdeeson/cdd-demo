@@ -1,0 +1,67 @@
+@import '~./../../lib.scss';
+
+.page_footer {
+  clear: both;
+  background: $charcoal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 35px 0 30px;
+  display: block;
+
+  &__inner {
+
+    max-width: 1290px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    letter-spacing: 0.2px;
+    border-top: 1px solid $grey;
+    margin-top: 30px;
+    padding: 10px;
+
+    color: $white;
+    font-size: 0.857em;
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px dotted;
+      color: $white;
+    }
+
+    ul {
+      list-style: none outside;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.857em;
+      padding: 10px;
+    }
+
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+      font-size: 1.3em;
+
+      a, a:hover {
+        padding-right: 12px;
+        padding-left: 12px;
+        float: left;
+        display: block;
+        border-right: 1px solid $grey;
+        border-color: $grey;
+        text-decoration: none;
+        border-bottom: none;
+      }
+    }
+
+    li:first-child a {
+      padding-right: 12px;
+      padding-left: 0;
+    }
+
+    li:last-child a {
+      border-right: none;
+      padding-right: 0px;
+      padding-left: 12px;
+    }
+  }
+
+}

@@ -43,20 +43,20 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
 
-    {% include '@components/dbHeader/dbHeader.html.twig' with {content: {
-      primary_menu: page.primary_menu,
-      secondary_menu: page.secondary_menu,
-    }} %}
+{% include '@components/dbHeader/dbHeader.html.twig' with {content: {
+  primary_menu: page.primary_menu,
+  secondary_menu: page.secondary_menu,
+}} %}
 
-    <main role="main">
-        <a id="main-content" tabindex="-1"></a>
+<aside class="layout-container section clearfix" role="complementary">
+    {{ page.highlighted }}
+</aside>
 
-        <div class="layout-content">
-            {{ page.content }}
-        </div>
+{% include '@components/dbLayoutTwoColumn/dbLayoutTwoColumn.html.twig' with {content: {
+  right: page.content
+}} %}
 
-    </main>
-
-</div>
+{% include '@components/dbFooter/dbFooter.html.twig' with {content: {
+  footer: page.footer_fifth
+}} %}

@@ -3,11 +3,10 @@
 .header {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: $blue;
-  color: #3b3b3b;
-  background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
+  color: $grey;
+  background-image: linear-gradient(to bottom, $darkBlue 0%, $blue 100%);
   line-height: 1.5;
   font-size: 1em;
-  margin: 0 0 1em;
   clear: right;
 
   &__inner {
@@ -74,7 +73,7 @@
         float: left;
         padding: 0.7em 0.8em;
         text-decoration: none;
-        text-shadow: 0 1px #eee;
+        text-shadow: 0 1px $white;
         border-radius: 8px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -128,13 +127,12 @@
 
       &__menu_toggle {
         color: #333;
-        background: #ccc;
-        background: rgba(255, 255, 255, 0.7);
+        background: $white;
         float: none;
         font-size: 0.929em;
         display: block;
         text-decoration: none;
-        text-shadow: 0 1px #eee;
+        text-shadow: 0 1px $white;
         padding: 0.9em 10px 0.9em 10px;
         z-index: 1000;
       }
@@ -178,7 +176,7 @@
       &__menu_toggle {
         display: none;
       }
-    }   
+    }
 
   }
 
