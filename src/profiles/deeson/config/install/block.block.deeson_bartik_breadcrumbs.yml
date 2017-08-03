@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_breadcrumbs
-theme: bartik
+    - deeson_bartik
+id: deeson_bartik_breadcrumbs
+theme: deeson_bartik
 region: breadcrumb
 weight: 0
 provider: null

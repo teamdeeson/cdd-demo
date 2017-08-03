@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_account_menu
-theme: bartik
+    - deeson_bartik
+id: deeson_bartik_account_menu
+theme: deeson_bartik
 region: secondary_menu
 weight: 0
 provider: null

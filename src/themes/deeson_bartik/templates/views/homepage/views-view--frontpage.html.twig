@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for main view template.
+ * Theme override for a main view template.
  *
  * Available variables:
  * - attributes: Remaining HTML attributes for the element.
@@ -30,6 +30,8 @@
  * @see template_preprocess_views_view()
  */
 #}
-{% include '@components/dbArticleList/dbArticleListInner.html.twig' with {content: {
-    rows: rows,
+{% include '@components/dbArticleList/dbArticleListOuter.html.twig' with {content: {
+  inner: rows,
+  empty: '',
+  footer: feed_icons,
 }} %}

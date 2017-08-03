@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_powered
-theme: bartik
+    - deeson_bartik
+id: deeson_bartik_powered
+theme: deeson_bartik
 region: footer_fifth
 weight: 10
 provider: null

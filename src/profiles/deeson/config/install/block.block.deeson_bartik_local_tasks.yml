@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
-id: bartik_local_tasks
-theme: bartik
+    - deeson_bartik
+id: deeson_bartik_local_tasks
+theme: deeson_bartik
 region: content
 weight: -40
 provider: null

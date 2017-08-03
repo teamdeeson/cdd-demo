@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_content
-theme: bartik
+    - deeson_bartik
+id: deeson_bartik_content
+theme: deeson_bartik
 region: content
 weight: 0
 provider: null
