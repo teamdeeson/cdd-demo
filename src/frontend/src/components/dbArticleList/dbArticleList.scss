@@ -2,6 +2,10 @@
 
 .article_list {
 
+  &__empty {
+    padding: 10px;
+  }
+
   &__footer {
     padding: 10px;
 

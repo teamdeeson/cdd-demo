@@ -57,7 +57,7 @@ install-docker: install-vdd
 install-vdd:
 # Drupal needs the settings file to be writable.
 	chmod 777 docroot/sites/default/settings.php
-	cd docroot && ${DRUSH_CMD} -y site-install config_installer
+	cd docroot && ${DRUSH_CMD} -y site-install deeson
 # Get rid of any changes made to the settings file.
 	git checkout src/settings/settings.php
 	chmod 644 docroot/sites/default/settings.php

@@ -29,7 +29,8 @@
     "drupal/shield": "^1.0",
     "drupal/warden": "^1.0",
     "drupal/config_installer": "^1.4",
-    "drupal/components": "^1.0"
+    "drupal/components": "^1.0",
+    "drupal/devel": "^1.0@RC"
   },
   "require-dev": {
     "behat/mink": "~1.7",
