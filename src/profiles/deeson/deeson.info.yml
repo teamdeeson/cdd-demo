@@ -4,38 +4,38 @@ description: 'Install with commonly used features pre-configured.'
 version: VERSION
 core: 8.x
 dependencies:
-  - node
-  - history
+  - automated_cron
   - block
+  - block_content
   - breakpoint
   - ckeditor
   - config
   - comment
+  - components
   - contact
-  - menu_link_content
   - datetime
-  - block_content
-  - editor
-  - help
-  - image
-  - menu_ui
-  - options
-  - path
-  - page_cache
-  - dynamic_page_cache
-  - taxonomy
   - dblog
-  - search
-  - shortcut
-  - toolbar
+  - devel_generate
+  - dynamic_page_cache
+  - editor
   - field_ui
   - file
+  - help
+  - history
+  - image
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
   - rdf
+  - search
+  - shortcut
+  - taxonomy
+  - toolbar
   - views
   - views_ui
-  - tour
-  - automated_cron
-  - components
 themes:
   - deeson_bartik
   - seven
