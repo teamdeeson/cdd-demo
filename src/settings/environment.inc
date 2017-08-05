@@ -10,9 +10,6 @@
  */
 $base_domains = [
   'localhost' => 'local',
-  'dev-aldes.pantheonsite.io' => 'dev',
-  'test-aldes.pantheonsite.io' => 'test',
-  'www.aldes.org.uk' => 'live',
 ];
 
 $instance = $_SERVER['HTTP_HOST'];
