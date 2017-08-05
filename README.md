@@ -26,9 +26,15 @@ $> make docker-start
 $> make install
 ```
 
-5. Go check the Drupal site is up and running at `http://localhost`
+5. Go check the Drupal site is up and running at [http://localhost](http://localhost)
 
-6. Go and check that the static frontend assets are being served at: `http://frontend.localhost`
+6. Go and check that the static frontend assets are being served at: [http://frontend.localhost](http://frontend.localhost)
+
+7. Generate some test content:
+
+```
+$> drush @docker genc 20
+```
 
 # Overview of development
 
