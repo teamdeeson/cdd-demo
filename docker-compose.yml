@@ -16,7 +16,6 @@ services:
       - 'traefik.port=3306'
       - 'traefik.frontend.rule=Host:localhost'
 
-
   php:
 # 2. Images without Drupal – wodby/drupal-php:[PHP_VERSION]-[STABILITY_TAG].
     image: wodby/drupal-php:7.1-2.1.0
@@ -114,18 +113,29 @@ services:
       - 'traefik.port=8025'
       - 'traefik.frontend.rule=Host:mailhog.localhost'
 
-#  node:
-#    image: node:7-alpine
-#    working_dir: /app
-#    labels:
-#      - 'traefik.backend=node'
-#      - 'traefik.port=3000'
-#      - 'traefik.frontend.rule=Host:front.localhost'
-#    expose:
-#      - "3000"
-#    volumes:
-#      - ./path/to/your/single-page-app:/app
-#    command: sh -c 'npm install && npm run start'
+  fe-node:
+    image: node:7
+    working_dir: /app
+    labels:
+      - 'traefik.backend=fe-node'
+      - 'traefik.port=3000'
+      - 'traefik.frontend.rule=Host:node.localhost'
+    volumes:
+      - ./src/frontend:/app
+    command: sh -c 'yarn install && yarn start'
+
+  fe-php:
+    image: php:7
+    working_dir: /app
+    depends_on:
+      - "fe-node"
+    volumes:
+      - ./src/frontend:/app
+    labels:
+      - 'traefik.backend=fe-php'
+      - 'traefik.port=3000'
+      - 'traefik.frontend.rule=Host:frontend.localhost'
+    command: bash -c "curl --silent --show-error https://getcomposer.org/installer | php && php composer.phar install && php -S 0.0.0.0:3000 node_modules/.bin/deeson-router-php"
 
 #  memcached:
 #    image: wodby/memcached:1.4-2.0.0
