@@ -54,3 +54,6 @@ Thumbs.db
 
 # Node
 node_modules
+
+# Composer
+src/frontend/composer.phar
