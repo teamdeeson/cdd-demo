@@ -118,8 +118,8 @@ services:
     working_dir: /app
     labels:
       - 'traefik.backend=fe-node'
-      - 'traefik.port=3000'
-      - 'traefik.frontend.rule=Host:node.localhost'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:frontend.localhost'
     volumes:
       - ./src/frontend:/app
     command: sh -c 'yarn install && yarn start'
@@ -131,11 +131,7 @@ services:
       - "fe-node"
     volumes:
       - ./src/frontend:/app
-    labels:
-      - 'traefik.backend=fe-php'
-      - 'traefik.port=3000'
-      - 'traefik.frontend.rule=Host:frontend.localhost'
-    command: bash -c "curl --silent --show-error https://getcomposer.org/installer | php && php composer.phar install && php -S 0.0.0.0:3000 node_modules/.bin/deeson-router-php"
+    command: bash -c "curl --silent --show-error https://getcomposer.org/installer | php && php composer.phar install && php -S 0.0.0.0:80 node_modules/.bin/deeson-router-php"
 
 #  memcached:
 #    image: wodby/memcached:1.4-2.0.0
