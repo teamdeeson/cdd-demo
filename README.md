@@ -6,7 +6,8 @@ This is a full website, using Docker Compose and Docker Sync for local hosting. 
 
 # Getting started
 
-1. Make sure you have the following global dependencies installed: composer, nodejs, yarn, docker and docker-sync installed.
+1. Make sure you have the following global dependencies installed: php, composer, docker and docker-sync installed on your local machine.
+
 2. Clone the repo to a folder called cdd-demo (the folder name is important!)
 
 ```
