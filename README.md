@@ -23,12 +23,12 @@ $> make docker-start
 4. Build the project assets and install Drupal
 
 ```
-$> make install
+$> make build && make install
 ```
 
 5. Go check the Drupal site is up and running at [http://localhost](http://localhost)
 
-6. Go and check that the static frontend assets are being served at: [http://frontend.localhost](http://frontend.localhost)
+6. Go and check that the static frontend assets are being served at: [http://frontend.localhost/webpack-dev-server/](http://frontend.localhost/webpack-dev-server/)
 
 7. Generate some test content:
 
