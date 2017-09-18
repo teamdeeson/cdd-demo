@@ -39,7 +39,7 @@ services:
 #     - ./:/var/www/html
       - ./.persist/public:/var/www/html/docroot/sites/default/files
       - ./.persist/private:/private
-      - docker-sync:/var/www/html # Docker-sync for macOS users
+      - docker-sync:/var/www/html:nocopy # Docker-sync for macOS users
 
   nginx:
 # wodby/drupal-nginx:[DRUPAL_VERSION]-[NGINX_VERSION]-[STABILITY_TAG].
@@ -56,7 +56,7 @@ services:
     volumes:
 #     - ./:/var/www/html
       - ./.persist/public:/var/www/html/docroot/sites/default/files
-      - docker-sync:/var/www/html # Docker-sync for macOS users
+      - docker-sync:/var/www/html:nocopy # Docker-sync for macOS users
     labels:
       - 'traefik.backend=nginx'
       - 'traefik.port=80'
@@ -121,8 +121,9 @@ services:
       - 'traefik.port=80'
       - 'traefik.frontend.rule=Host:frontend.localhost'
     volumes:
-      - ./src/frontend:/app
-    command: sh -c 'yarn install && yarn start'
+      #- ./src/frontend:/app
+      - docker-sync:/app:nocopy # Docker-sync for macOS users
+    command: sh -c 'cd src/frontend && yarn install && yarn start'
 
   fe-php:
     image: php:7
@@ -130,8 +131,9 @@ services:
     depends_on:
       - "fe-node"
     volumes:
-      - ./src/frontend:/app
-    command: bash -c "curl --silent --show-error https://getcomposer.org/installer | php && php composer.phar install && php -S 0.0.0.0:80 node_modules/.bin/deeson-router-php"
+      #- ./src/frontend:/app
+      - docker-sync:/app:nocopy # Docker-sync for macOS users
+    command: bash -c "cd src/frontend && curl --silent --show-error https://getcomposer.org/installer | php && php composer.phar install && php -S 0.0.0.0:80 node_modules/.bin/deeson-router-php"
 
 #  memcached:
 #    image: wodby/memcached:1.4-2.0.0
