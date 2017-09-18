@@ -73,7 +73,7 @@ post-deploy:
 # Start Docker using docker-sync
 docker-start: docker-up
 docker-up: docker-local-ssl
-	docker-sync start && docker-compose up -d
+	docker-sync start && docker-compose up
 
 # Stop Docker and docker-sync
 docker-stop: docker-down
