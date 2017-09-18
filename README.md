@@ -6,7 +6,7 @@ This is a full website, using Docker Compose and Docker Sync for local hosting. 
 
 # Getting started
 
-1. Make sure you have the following global dependencies installed: php, composer, docker and docker-sync installed on your local machine.
+1. Make sure you have the following global dependencies installed: php, composer, docker and docker-sync installed on your local machine. For drush to work with Docker, you'll need to add the following line to your `/etc/hosts` file: `127.0.0.1 docker.local`
 
 2. Clone the repo to a folder called cdd-demo (the folder name is important!)
 
